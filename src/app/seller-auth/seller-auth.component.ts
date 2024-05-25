@@ -12,4 +12,8 @@ export class SellerAuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  signUp(data:Object):void{
+    console.log(data);
+  }
+
 }

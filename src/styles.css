@@ -1,9 +1,36 @@
-body{
-font-family: sans-serif;
+body {
+    font-family: sans-serif;
 }
-.container
-{
+
+.container {
     margin-left: 5%;
     margin-right: 5%;
 
+}
+
+.common-form {
+
+    text-align: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 300px;
+}
+
+.form-input {
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+
+}
+
+.form-button {
+    height: 30px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+    cursor: pointer ;
 }
