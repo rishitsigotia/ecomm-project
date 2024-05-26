@@ -1,0 +1,28 @@
+{
+  "seller": [
+    {
+      "name": "rishit",
+      "email": "rsigotia",
+      "password": "learningangular",
+      "id": "1"
+    },
+    {
+      "id": "c5ac",
+      "name": "master rishit",
+      "email": "masterrishit@gmail.com",
+      "password": "arraywasnotthere"
+    },
+    {
+      "id": "dc5d",
+      "name": "master sigotia",
+      "email": "mastersigotia@gmail.com",
+      "password": "learnjson"
+    },
+    {
+      "id": "71dd",
+      "name": "LuffyZoro",
+      "password": "pirateing",
+      "email": "luffypirateking007@gmail.com"
+    }
+  ]
+}
