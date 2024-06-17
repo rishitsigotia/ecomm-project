@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { login, signUp } from '../data-type';
 import { observeNotification } from 'rxjs/internal/Notification';
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class SellerService {
-  isSellerLoggedIn = new BehaviorSubject<boolean>(false)
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
+  isLogin = new EventEmitter<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
   userSignUp(data: signUp) {
     let result = this.http
@@ -32,6 +33,7 @@ export class SellerService {
           this.router.navigate(["seller-home"]); //this will redirect to seller home
         } else {
           console.warn("The user did'nt exist");
+          this.isLogin.emit(true);
         }
       })
   }

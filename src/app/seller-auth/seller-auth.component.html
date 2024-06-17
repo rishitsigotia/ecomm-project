@@ -11,6 +11,7 @@
     </div>
     <div *ngIf = "showLogin" class="login">
         <h1>Seller Login </h1>
+        <p>{{errorMessage}}</p>
         <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value )" class="common-form">
             <input class="form-input" ngModel name="email" type="text" placeholder="Enter email">
             <input class="form-input" ngModel name="password" type="password" placeholder="Enter password">
