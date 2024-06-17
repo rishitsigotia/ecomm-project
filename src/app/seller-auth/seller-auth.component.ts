@@ -11,7 +11,7 @@ import { signUp } from '../data-type';
 export class SellerAuthComponent implements OnInit {
 
   constructor(private seller : SellerService , private router : Router) { }
-
+  showLogin = false
   ngOnInit(): void {
     this.seller.reloadSeller() // check if seller is there or not 
   }
@@ -20,5 +20,19 @@ export class SellerAuthComponent implements OnInit {
     
     this.seller.userSignUp(data)
   }
+
+  login(data:signUp):void{
+    
+    this.seller.userSignUp(data)
+  }
+
+  openLogin():void{
+    this.showLogin = true;
+  }
+  
+  openSignup():void{
+    this.showLogin = false;
+  }
+
 
 }
