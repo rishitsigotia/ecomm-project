@@ -13,6 +13,7 @@ export class SellerAuthComponent implements OnInit {
   constructor(private seller : SellerService , private router : Router) { }
 
   ngOnInit(): void {
+    this.seller.reloadSeller() // check if seller is there or not 
   }
 
   signUp(data:signUp):void{
