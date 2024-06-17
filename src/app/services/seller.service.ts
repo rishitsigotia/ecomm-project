@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { signUp } from '../data-type';
+import { login, signUp } from '../data-type';
 import { observeNotification } from 'rxjs/internal/Notification';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
@@ -18,6 +18,22 @@ export class SellerService {
         localStorage.setItem('seller', JSON.stringify(result.body)); // keep it locally stored when reload
         this.router.navigate(["seller-home"]); //this will redirect to seller home
       });
+  }
+
+  userLogin(data: login) {
+    console.warn(data)
+    //API CALL 
+    this.http //Use `` backtick not '' single string or double quotes, otherwise it will take it as string
+      .get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, { observe: 'response' })
+      .subscribe((result: any) => { // using any to check length otherwise it will give error
+        if (result && result.body && result.body.length) {
+          this.isSellerLoggedIn.next(true); //this will give the permission to go , but still redirect
+          localStorage.setItem('seller', JSON.stringify(result.body)); // keep it locally stored when reload
+          this.router.navigate(["seller-home"]); //this will redirect to seller home
+        } else {
+          console.warn("The user did'nt exist");
+        }
+      })
   }
 
   reloadSeller() {

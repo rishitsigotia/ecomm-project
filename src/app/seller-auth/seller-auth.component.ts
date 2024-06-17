@@ -22,8 +22,7 @@ export class SellerAuthComponent implements OnInit {
   }
 
   login(data:signUp):void{
-    
-    this.seller.userSignUp(data)
+    this.seller.userLogin(data)
   }
 
   openLogin():void{
