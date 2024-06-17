@@ -34,3 +34,7 @@ body {
     color: blueviolet;
     cursor: pointer ;
 }
+
+.error-p{
+    color:red
+}

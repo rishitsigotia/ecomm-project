@@ -23,6 +23,7 @@ export class SellerAuthComponent implements OnInit {
   }
 
   login(data:signUp):void{
+    this.errorMessage =''; //empty it after filling 
     this.seller.userLogin(data)
     this.seller.isLogin.subscribe((error)=>{
       if(error) 
