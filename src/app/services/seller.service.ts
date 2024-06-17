@@ -16,9 +16,6 @@ export class SellerService {
       .subscribe((result) => {
         this.isSellerLoggedIn.next(true); //this will give the permission to go , but still redirect
         this.router.navigate(["seller-home"]); //this will redirect to seller home
-        console.warn(result);
       });
-
-    return false;
   }
 }
